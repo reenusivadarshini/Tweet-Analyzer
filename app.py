@@ -42,7 +42,7 @@ auth = tweepy.OAuthHandler(consumer_key,consumer_sec)
 auth.set_access_token(access_token,access_token_sec)
 api = tweepy.API(auth)
 
-add_selectbox = st.sidebar.selectbox("How would you like to be contacted?",("Email", "Home phone", "Mobile phone"))
+add_selectbox = st.sidebar("How would you like to be contacted?")
 
 
 twid = st.text_input('Enter the id the person', 'your_id')
