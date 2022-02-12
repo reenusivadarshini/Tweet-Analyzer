@@ -11,8 +11,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+from PIL import Image
+image = Image.open('header.png')
 
-st.title("WELCOME!!!")
+st.image(image, caption=' ')
 
 
 
