@@ -110,5 +110,5 @@ d
 plt.title('Sentiment Analysis')
 plt.xlabel('Sentiment')
 plt.ylabel('Counts')
-df['Analysis'].value_counts().plot(kind = 'bar')
+d['Analysis'].value_counts().plot(kind = 'bar')
 plt.show()
