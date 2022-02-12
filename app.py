@@ -108,10 +108,4 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 d
 
 
- 
-# count plot on single categorical variable
-sns.countplot(x ='Analysis', data = d)
- 
-# Show the plot
-plt.show()
 
