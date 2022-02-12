@@ -33,7 +33,7 @@ twid = st.text_input('Enter the id the person', 'tweeter id')
 st.write('the id is', twid)
 
 
-posts = api.user_timeline(screen_name="@Ria11871667", count = 10, lang ="en", tweet_mode="extended")
+posts = api.user_timeline(screen_name=twid, count = 10, lang ="en", tweet_mode="extended")
 print("Show the 6 recent tweets:\n")
 i=1
 for tweet in posts[:9]:
