@@ -14,7 +14,6 @@ import seaborn as sns
 
 st.title("WELCOME!!!")
 
-st.markdown("[![Foo](http://www.google.com.au/images/nav_logo7.png)](http://google.com.au/)")
 
 consumer_key = "pTivamyKt0GtxZiFizMMhsouj"
 consumer_sec = "HEkXmzyaALIAD1AfTHLdRnegC8rstIY2AUHbrzvRGIjoJl3PCo"
