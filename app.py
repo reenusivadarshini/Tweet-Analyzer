@@ -106,5 +106,9 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 d
 
 
+st.write(sns.countplot(x=d["Analysis"],data=d))
+st.pyplot(use_container_width=True)
+
+
 
 
