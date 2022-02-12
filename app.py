@@ -57,7 +57,6 @@ def getPolarity(text):
    return  TextBlob(text).sentiment.polarity
 d['Subjectivity'] = d['Tweets'].apply(getSubjectivity)
 d['Polarity'] = d['Tweets'].apply(getPolarity)
-d
 
 net=0
 neg=0
@@ -74,7 +73,7 @@ def getAnalysis(score):
   pos+=1
   return 'Positive'
 d['Analysis'] = d['Polarity'].apply(getAnalysis)
-
+d
 (
  d
  .style
@@ -84,19 +83,7 @@ d['Analysis'] = d['Polarity'].apply(getAnalysis)
 
 if(neg>pos):
   st.header("Sentimental Analysis of Tweets")
-  st.write("""
-  The person is depressed
-  Mental health refers to cognitive, behavioral, and emotional well-being.
-  It is all about how people think, feel, and behave. 
-  People sometimes use the term “mental health” to mean the absence of a mental disorder.
-  Mental health can affect daily living, relationships, and physical health.
-  """)
+  st.write("The person is depressed!!!")
 else:
   st.header("Sentimental Analysis of Tweets")
-  st.write("""
-  The person is not depressed
-  Mental health refers to cognitive, behavioral, and emotional well-being.
-  It is all about how people think, feel, and behave. 
-  People sometimes use the term “mental health” to mean the absence of a mental disorder.
-  Mental health can affect daily living, relationships, and physical health.
-  """)
+  st.write("The person is not depressed!!")
