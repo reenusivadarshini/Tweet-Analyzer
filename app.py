@@ -15,9 +15,6 @@ import seaborn as sns
 st.title("WELCOME!!!")
 
 
-img = Image.open("1.png")
-st.button(st.image(img))
-
 
 
 consumer_key = "pTivamyKt0GtxZiFizMMhsouj"
