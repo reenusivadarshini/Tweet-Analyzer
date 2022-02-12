@@ -8,7 +8,7 @@ import string
 import pandas as pd
 import streamlit as st
 
-
+st.title("WELCOME!!!")
 consumer_key = "pTivamyKt0GtxZiFizMMhsouj"
 consumer_sec = "HEkXmzyaALIAD1AfTHLdRnegC8rstIY2AUHbrzvRGIjoJl3PCo"
 
@@ -26,7 +26,10 @@ api_connect=tweepy.API(auth)
 auth = tweepy.OAuthHandler(consumer_key,consumer_sec)
 auth.set_access_token(access_token,access_token_sec)
 api = tweepy.API(auth)
-st.title("WELCOME!!!")
+
+title = st.text_input('Movie title', 'Life of Brian')
+st.write('The current movie title is', title)
+
 
 posts = api.user_timeline(screen_name="@Ria11871667", count = 10, lang ="en", tweet_mode="extended")
 print("Show the 6 recent tweets:\n")
