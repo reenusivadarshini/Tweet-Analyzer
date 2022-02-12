@@ -101,10 +101,10 @@ d['Analysis'] = d['Polarity'].apply(getAnalysis)
 
 if(neg>pos):
   st.header("Sentimental Analysis of Tweets")
-  st.write("The person is depressed!!!")
+  st.header("The person is depressed!!!")
 else:
   st.header("Sentimental Analysis of Tweets")
-  st.write("The person is not depressed!!")
+  st.header("The person is not depressed!!")
 page_bg_img = '''
 <style>
 body {
