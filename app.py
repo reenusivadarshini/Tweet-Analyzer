@@ -107,7 +107,7 @@ background-size: cover;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 d
 
-chart_data = pd.d(pos,neg)
+chart_data = pd.d(Subjectivity, Polarity)
 
 st.bar_chart(chart_data)
 
