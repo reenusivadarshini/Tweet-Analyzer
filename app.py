@@ -102,3 +102,11 @@ background-size: cover;
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 d
+
+
+
+plt.title('Sentiment Analysis')
+plt.xlabel('Sentiment')
+plt.ylabel('Counts')
+df['Analysis'].value_counts().plot(kind = 'bar')
+plt.show()
