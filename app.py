@@ -10,16 +10,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-import tweepy
-from  textblob import TextBlob 
-import pandas as pd
-import numpy as np
-import re
-import string
-import pandas as pd
-import streamlit as st
-import matplotlib.pyplot as plt
-import seaborn as sns
+st.set_page_config(page_title='Senti_Mental', page_icon="☮️ ")
 
 
 
