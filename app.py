@@ -10,8 +10,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.set_page_config(page_title='Senti_Mental', page_icon="☮️ ")
 
+st.set_page_config(page_title='My First App', page_icon=':smiley')
 
 
 st.title("WELCOME!!!")
