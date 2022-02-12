@@ -49,6 +49,7 @@ def cleanTxt(text):
  text = re.sub('https?:\/\/\S+', '', text)
  text = re.sub(':', '  ', text)
  text = re.sub('_','  ', text)
+ text = re.sub('RT[\s]+', '', text)
 
  return text
 
