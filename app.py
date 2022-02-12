@@ -41,7 +41,7 @@ api_connect=tweepy.API(auth)
 auth = tweepy.OAuthHandler(consumer_key,consumer_sec)
 auth.set_access_token(access_token,access_token_sec)
 api = tweepy.API(auth)
-add_selectbox = st.sidebar.selectbox("Rate the app ",("*****", "****", "***","**","*"))
+add_selectbox = st.sidebar.selectbox("Rate the app ",("😁", "😊", "😑","😖","😡"))
 
 
 
