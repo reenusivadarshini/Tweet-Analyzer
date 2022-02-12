@@ -119,4 +119,4 @@ hide_menu_style = """
         </style>
         """
 st.markdown(hide_menu_style, unsafe_allow_html=True)
-st.markdown("[![Foo](https://www.canva.com/design/DAE4K-_drak/cxfgQmZd7zimza5-msRsTg/view?utm_content=DAE4K-_drak&utm_campaign=designshare&utm_medium=link&utm_source=shareyourdesignpanel)](https://www.linkedin.com/in/reenu-sivadarshini-m-325429206/)")
+st.markdown("[![CONTACT](https://www.canva.com/design/DAE4K-_drak/cxfgQmZd7zimza5-msRsTg/view?utm_content=DAE4K-_drak&utm_campaign=designshare&utm_medium=link&utm_source=shareyourdesignpanel)](https://www.linkedin.com/in/reenu-sivadarshini-m-325429206/)")
