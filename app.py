@@ -118,5 +118,10 @@ hide_menu_style = """
         footer {visibility: hidden;}
         </style>
         """
+
+from PIL import Image
+image = Image.open('1.png')
+
+st.image(image, caption='Sunrise by the mountains')
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 st.markdown("[![CONTACT](1.png)](https://www.linkedin.com/in/reenu-sivadarshini-m-325429206/)")
