@@ -107,11 +107,9 @@ background-size: cover;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 d
 
-plt.title('Sentiment Analysis')
-plt.xlabel('Sentiment')
-plt.ylabel('Counts')
-d['Analysis'].value_counts().plot(kind = 'line')
-st.write(plt.show())
+chart_data = pd.d(pos,neg)
+
+st.bar_chart(chart_data)
 
 
 
