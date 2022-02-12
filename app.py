@@ -18,8 +18,8 @@ st.title("WELCOME!!!")
 img = Image.open("1.png")
 st.button(st.image(img))
 st.button("add" , **styles,  **classes)
- enabling  to do: 
- st.button("add" , img=img,  bold=True)
+enabling  to do: 
+st.button("add" , img=img,  bold=True)
 
 
 st.markdown("""
