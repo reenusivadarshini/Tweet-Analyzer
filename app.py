@@ -1,135 +1,102 @@
 
-import streamlit as st
 import tweepy
-from textblob import TextBlob
-from wordcloud import WordCloud
+from  textblob import TextBlob 
 import pandas as pd
 import numpy as np
 import re
-import matplotlib.pyplot as plt
-from PIL import Image
-import seaborn as sns
-consumerKey ="pTivamyKt0GtxZiFizMMhsouj"
-consumerSecret = "HEkXmzyaALIAD1AfTHLdRnegC8rstIY2AUHbrzvRGIjoJl3PCo"
-accessToken = "1490018179690602500-6dR6g69GHBE1fMZICvqyDMKrJINNyS"
-accessTokenSecret ="ZAjbICteZd6FsbWEHeP2SIlmmdIycSEvgoOfJaXjf9wTs"
-
-#Create the authentication object
-authenticate = tweepy.OAuthHandler(consumerKey, consumerSecret)     
-# Set the access token and access token secret
-authenticate.set_access_token(accessToken, accessTokenSecret)     
-# Creating the API object while passing in auth information
-api = tweepy.API(authenticate, wait_on_rate_limit = True)
+import string
+import pandas as pd
+import streamlit as st
 
 
-#plt.style.use('fivethirtyeight')
-def app():
-	st.title("Tweet Analyzer 🔥")
-	st.subheader("Analyze the tweets of your favourite Personalities")
-	st.subheader("This tool performs the following tasks :")
-	st.write("1. Fetches the 5 most recent tweets from the given twitter handel")
-	st.write("2. Generates a Word Cloud")
-	st.write("3. Performs Sentiment Analysis a displays it in form of a Bar Graph"
-	raw_text = st.text_area("Enter the exact twitter handle of the Personality (without @)")
-	st.success("Fetching last 5 Tweets")
-	def Show_Recent_Tweets(raw_text):
- 		posts = api.user_timeline(screen_name=raw_text, count = 100, lang ="en", tweet_mode="extended")
-                def get_tweets():
-			l=[]
-			i=1
-			for tweet in posts[:5]:
-				l.append(tweet.full_text)
-				i= i+1
-			return l
-		recent_tweets=get_tweets()		
-		return recent_tweets
+consumer_key = "pTivamyKt0GtxZiFizMMhsouj"
+consumer_sec = "HEkXmzyaALIAD1AfTHLdRnegC8rstIY2AUHbrzvRGIjoJl3PCo"
 
-	recent_tweets= Show_Recent_Tweets(raw_text)
-        st.write(recent_tweets)
-        def Plot_Analysis():
-		st.success("Generating Visualisation for Sentiment Analysis")
-		posts = api.user_timeline(screen_name=raw_text, count = 100, lang ="en", tweet_mode="extended")
-		df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
-		# Create a function to clean the tweets
-		def cleanTxt(text):
-	 		text = re.sub('@[A-Za-z0–9]+', '', text) #Removing @mentions
-		 	text = re.sub('#', '', text) # Removing '#' hash tag
-			text = re.sub('RT[\s]+', '', text) # Removing RT
-			text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
-			return text
-		 # Clean the tweets
-		df['Tweets'] = df['Tweets'].apply(cleanTxt)
-		def getSubjectivity(text):
-			return TextBlob(text).sentiment.subjectivity
-					# Create a function to get the polarity
-		def getPolarity(text):
-			return  TextBlob(text).sentiment.polarity
-		df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
-		df['Polarity'] = df['Tweets'].apply(getPolarity)
+# from proxy server we need to connect
+access_token = "1490018179690602500-6dR6g69GHBE1fMZICvqyDMKrJINNyS"
+access_token_sec = "ZAjbICteZd6FsbWEHeP2SIlmmdIycSEvgoOfJaXjf9wTs"
+dir(tweepy)
 
+auth=tweepy.OAuthHandler(consumer_key,consumer_sec)
 
-		def getAnalysis(score):
-			if score < 0:
-				return 'Negative'
-			elif score == 0:
-				return 'Neutral'
-			else:
-				return 'Positive'
-					    
-		df['Analysis'] = df['Polarity'].apply(getAnalysis)
-		return df
-	df= Plot_Analysis()	 
-	st.write(sns.countplot(x=df["Analysis"],data=df))
-	st.pyplot(use_container_width=True)
-	st.subheader("This tool fetches the last 100 tweets from the twitter handel & Performs the following tasks")
-	st.write("1. Converts it into a DataFrame")
-	st.write("2. Cleans the text")
-	st.write("3. Analyzes Subjectivity of tweets and adds an additional column for it")
-	st.write("4. Analyzes Polarity of tweets and adds an additional column for it")
-	st.write("5. Analyzes Sentiments of tweets and adds an additional column for it")
-	user_name = st.text_area("*Enter the exact twitter handle of the Personality (without @)*")
-	def get_data(user_name):
-		posts = api.user_timeline(screen_name=user_name, count = 100, lang ="en", tweet_mode="extended")
-		df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
-		def cleanTxt(text):
-			text = re.sub('@[A-Za-z0–9]+', '', text) #Removing @mentions
-			text = re.sub('#', '', text) # Removing '#' hash tag
-			text = re.sub('RT[\s]+', '', text) # Removing RT
-			text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
-			return text
+auth.set_access_token(access_token,access_token_sec)
 
-			# Clean the tweets
-		df['Tweets'] = df['Tweets'].apply(cleanTxt)
-		def getSubjectivity(text):
-			return TextBlob(text).sentiment.subjectivity
+api_connect=tweepy.API(auth)
 
-						# Create a function to get the polarity
-		def getPolarity(text):
-			return  TextBlob(text).sentiment.polarity
+auth = tweepy.OAuthHandler(consumer_key,consumer_sec)
+auth.set_access_token(access_token,access_token_sec)
+api = tweepy.API(auth)
 
+posts = api.user_timeline(screen_name="@Ria11871667", count = 10, lang ="en", tweet_mode="extended")
+print("Show the 6 recent tweets:\n")
+i=1
+for tweet in posts[:9]:
+    print(str(i) +') '+ tweet.full_text + '\n')
+    i= i+1
 
-						# Create two new columns 'Subjectivity' & 'Polarity'
-		df['Subjectivity'] = df['Tweets'].apply(getSubjectivity)
-		df['Polarity'] = df['Tweets'].apply(getPolarity)
-		def getAnalysis(score):
-			if score < 0:
-				return 'Negative'
-
-			elif score == 0:
-				return 'Neutral'
-			else:
-				return 'Positive'
-
-		
-						    
-		df['Analysis'] = df['Polarity'].apply(getAnalysis)
-		return df
-	st.write("Fetching Last 100 Tweets")
-
-	df=get_data(user_name)
-	st.write(df)
+d= pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
+d
 
 
 
-if __name__ == "__main__":
-	app()
+def cleanTxt(text):
+ text = re.sub('@[A-Za-z0–9]+', '', text)
+ text = re.sub('#', '', text)
+ text = re.sub('https?:\/\/\S+', '', text)
+ text = re.sub(':', '  ', text)
+ text = re.sub('_','  ', text)
+
+ return text
+
+d['Tweets'] = d['Tweets'].apply(cleanTxt)
+
+
+def getSubjectivity(text):
+   return TextBlob(text).sentiment.subjectivity
+def getPolarity(text):
+   return  TextBlob(text).sentiment.polarity
+d['Subjectivity'] = d['Tweets'].apply(getSubjectivity)
+d['Polarity'] = d['Tweets'].apply(getPolarity)
+d
+
+net=0
+neg=0
+pos=0
+def getAnalysis(score):
+ global net,neg,pos
+ if score < 0:
+  neg+=1
+  return 'Negative'
+ elif score == 0:
+  net+=1
+  return 'Neutral'
+ else:
+  pos+=1
+  return 'Positive'
+d['Analysis'] = d['Polarity'].apply(getAnalysis)
+
+(
+ d
+ .style
+ .background_gradient(cmap="PuRd_r")
+
+)
+
+if(neg>pos):
+  st.header("Sentimental Analysis of Tweets")
+  st.write("""
+  The person is depressed
+  Mental health refers to cognitive, behavioral, and emotional well-being.
+  It is all about how people think, feel, and behave. 
+  People sometimes use the term “mental health” to mean the absence of a mental disorder.
+  Mental health can affect daily living, relationships, and physical health.
+  """)
+else:
+  st.header("Sentimental Analysis of Tweets")
+  st.write("""
+  The person is not depressed
+  Mental health refers to cognitive, behavioral, and emotional well-being.
+  It is all about how people think, feel, and behave. 
+  People sometimes use the term “mental health” to mean the absence of a mental disorder.
+  Mental health can affect daily living, relationships, and physical health.
+  """)
