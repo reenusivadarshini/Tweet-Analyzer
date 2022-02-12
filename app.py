@@ -35,8 +35,6 @@ for tweet in posts[:9]:
     i= i+1
 
 d= pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
-d
-
 
 
 def cleanTxt(text):
