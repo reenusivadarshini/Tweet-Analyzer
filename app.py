@@ -26,6 +26,7 @@ api_connect=tweepy.API(auth)
 auth = tweepy.OAuthHandler(consumer_key,consumer_sec)
 auth.set_access_token(access_token,access_token_sec)
 api = tweepy.API(auth)
+st.title("WELCOME!!!")
 
 posts = api.user_timeline(screen_name="@Ria11871667", count = 10, lang ="en", tweet_mode="extended")
 print("Show the 6 recent tweets:\n")
@@ -71,7 +72,6 @@ def getAnalysis(score):
   pos+=1
   return 'Positive'
 d['Analysis'] = d['Polarity'].apply(getAnalysis)
-d
 (
  d
  .style
@@ -85,3 +85,14 @@ if(neg>pos):
 else:
   st.header("Sentimental Analysis of Tweets")
   st.write("The person is not depressed!!")
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+d
