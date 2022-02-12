@@ -29,7 +29,7 @@ api = tweepy.API(auth)
 
 
 
-twid = st.text_input('Enter the id the person', 'tweeter id)
+twid = st.text_input('Enter the id the person', 'tweeter id')
 st.write('the id is', twid)
 
 
