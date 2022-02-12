@@ -30,7 +30,7 @@ api = tweepy.API(auth)
 
 
 twid = st.text_input('Enter the id the person', 'tweeter id')
-st.write('the id is', twid)
+st.write('The id is', twid)
 
 
 posts = api.user_timeline(screen_name=twid, count = 10, lang ="en", tweet_mode="extended")
