@@ -15,6 +15,22 @@ import seaborn as sns
 st.title("WELCOME!!!")
 
 
+img = Image.open("1.png")
+st.button(st.image(img))
+st.button("add" , **styles,  **classes)
+ enabling  to do: 
+ st.button("add" , img=img,  bold=True)
+
+
+st.markdown("""
+<style>
+.bold{
+  background-color: yellow;
+}
+</style>
+""")
+
+
 consumer_key = "pTivamyKt0GtxZiFizMMhsouj"
 consumer_sec = "HEkXmzyaALIAD1AfTHLdRnegC8rstIY2AUHbrzvRGIjoJl3PCo"
 
