@@ -107,9 +107,11 @@ background-size: cover;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 d
 
-
-st.write(sns.countplot(x=d["Analysis"],data=d))
-st.pyplot(use_container_width=True)
+plt.title('Sentiment Analysis')
+plt.xlabel('Sentiment')
+plt.ylabel('Counts')
+d['Analysis'].value_counts().plot(kind = 'line')
+st.write(plt.show())
 
 
 
