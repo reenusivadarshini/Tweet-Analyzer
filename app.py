@@ -108,3 +108,13 @@ background-size: cover;
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 d
+
+
+
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden; }
+        footer {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
