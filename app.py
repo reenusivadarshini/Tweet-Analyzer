@@ -107,8 +107,4 @@ d
 
 
 
-plt.title('Sentiment Analysis')
-plt.xlabel('Sentiment')
-plt.ylabel('Counts')
-d['Analysis'].value_counts().plot(kind = 'bar')
-plt.show()
+
