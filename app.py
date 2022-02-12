@@ -7,6 +7,8 @@ import re
 import string
 import pandas as pd
 import streamlit as st
+import matplotlib.pyplot as plt
+
 
 st.title("WELCOME!!!")
 consumer_key = "pTivamyKt0GtxZiFizMMhsouj"
