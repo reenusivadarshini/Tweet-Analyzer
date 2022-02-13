@@ -123,7 +123,7 @@ d
 st.subheader('Scatterplot analysis')
 selected_x_var = st.selectbox('What do you want the x variable to be?', d.columns)
 selected_y_var = st.selectbox('What about the y?', df.columns)
-fig = px.scatter(df, x = d[selected_x_var], y = d[selected_y_var], color="species")
+fig = px.scatter(d, x = d[selected_x_var], y = d[selected_y_var], color="species")
 st.plotly_chart(fig)
 
 
