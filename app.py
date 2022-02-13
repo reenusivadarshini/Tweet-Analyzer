@@ -124,7 +124,11 @@ d
 st.subheader('Scatterplot analysis')
 selected_x_var = st.selectbox('What do you want the x variable to be?', d.columns)
 selected_y_var = st.selectbox('What about the y?', d.columns)
-fig = px.scatter(d, x = d[selected_x_var], y = d[selected_y_var], color="species")
+
+d = px.data.iris() # iris is a pandas DataFrame
+fig = px.scatter(d, x="selected_x_var", y="selected_y_var")
+
+#fig = px.scatter(d, x = d[selected_x_var], y = d[selected_y_var], color="species")
 st.plotly_chart(fig)
 
 
