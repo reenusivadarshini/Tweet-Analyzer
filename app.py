@@ -129,7 +129,7 @@ hide_menu_style = """
         """
 
 from PIL import Image
-image = Image.open('cont.png')
+image = Image.open('footer.png')
 
 st.image(image, caption=' ')
 
