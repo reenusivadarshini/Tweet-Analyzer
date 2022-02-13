@@ -46,7 +46,7 @@ image = Image.open('sidebar1.png')
 st.sidebar.image(image)
 
 
-twid = st.text_input('Enter the id the person', 'your_id')
+twid = st.text_input('Enter the id the person( Eg. @Ria11871667 )', 'your_id')
 st.write('The id is', twid)
 
 
@@ -125,10 +125,8 @@ st.subheader('Scatterplot analysis')
 selected_x_var = st.selectbox('What do you want the x variable to be?', d.columns)
 selected_y_var = st.selectbox('What about the y?', d.columns)
 
-fig = px.scatter(d, x="Analysis", y="Polarity")
-
+#fig = px.scatter(d, x="Analysis", y="Polarity")
 fig1 = px.scatter(d, x = d[selected_x_var], y = d[selected_y_var])
-st.plotly_chart(fig)
 st.plotly_chart(fig1)
 
 
