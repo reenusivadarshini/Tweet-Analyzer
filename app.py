@@ -119,6 +119,14 @@ background-size: cover;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 d
 
+bar_fig = plt.figure(figsize=(8,7))
+
+bar_ax = bar_fig.add_subplot(111)
+
+d = d[["Polarity", "Analysis"]]
+
+d.plot.bar(alpha=0.8, ax=bar_ax, title="Bar_graph");
+
 
 
 hide_menu_style = """
