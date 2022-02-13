@@ -127,7 +127,7 @@ selected_y_var = st.selectbox('What about the y?', d.columns)
 
 fig = px.scatter(d, x="Subjectivity", y="Polarity",color="Analysis")
 fig1 = px.scatter(d, x = d[selected_x_var], y = d[selected_y_var])
-st.plotly_chart(fig1)
+st.plotly_chart(fig)
 
 
 hide_menu_style = """
