@@ -40,7 +40,7 @@ api = tweepy.API(auth)
 add_selectbox = st.sidebar.selectbox("Rate the app ",("😁", "😊", "😑","😖","😡"))
 
 from PIL import Image
-image = Image.open('sidebar.png')
+image = Image.open('sidebar1.png')
 
 st.sidebar.image(image)
 
