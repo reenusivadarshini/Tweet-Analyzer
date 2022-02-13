@@ -119,14 +119,12 @@ background-size: cover;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 d
 
-bar_fig = plt.figure(figsize=(8,7))
 
-bar_ax = bar_fig.add_subplot(111)
-
-df = d[["Polarity", "Subjectivity"]]
-
-d.plot.bar(alpha=0.8, ax=bar_ax, title="Bar_graph");
-
+st.subheader('Scatterplot analysis')
+selected_x_var = st.selectbox('What do you want the x variable to be?', d.columns)
+selected_y_var = st.selectbox('What about the y?', df.columns)
+fig = px.scatter(df, x = d[selected_x_var], y = d[selected_y_var], color="species")
+st.plotly_chart(fig)
 
 
 hide_menu_style = """
