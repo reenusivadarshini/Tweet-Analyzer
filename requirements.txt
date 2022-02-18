@@ -17,6 +17,7 @@ decorator==4.4.2
 defusedxml==0.6.0
 docutils==0.15.2
 entrypoints==0.3
+emoji==1.6.3
 enum-compat==0.0.3
 idna==2.9
 ipykernel==5.3.0
