@@ -10,6 +10,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+import emoji
 
 
 from PIL import Image
@@ -67,6 +68,8 @@ def cleanTxt(text):
  text = re.sub(':', '  ', text)
  text = re.sub('_','  ', text)
  text = re.sub('RT[\s]+', '', text)
+ text=emoji.demojize(text)
+
 
  return text
 
