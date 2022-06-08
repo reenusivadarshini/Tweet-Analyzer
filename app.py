@@ -13,8 +13,8 @@ import plotly.express as px
 import emoji
 import csv
 import sys
-import easyocr
-reader = easyocr.Reader(['ch_sim','en'])
+#import easyocr
+#reader = easyocr.Reader(['ch_sim','en'])
 
 
 from PIL import Image
