@@ -190,12 +190,14 @@ def get_all_tweets(screen_name):
         print(d)
         d
         #print("\n",s)
+
+twidi = st.text_input('Enter the id the person( Eg. @userhandle )', 'your_id')
+st.write('The id is', twidi)
+get_all_tweets(twidi)
 if(s<0):
     print("The Images posted by the user are depressing")
 else:
     print("The Images posted by the user are not depressing")
-get_all_tweets("@depressingmsgs")
-
 
 hide_menu_style = """
         <style>
