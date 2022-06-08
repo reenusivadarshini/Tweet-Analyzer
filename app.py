@@ -191,9 +191,8 @@ def get_all_tweets(screen_name):
         d
         #print("\n",s)
 
-twidi = st.text_input('Enter the id the person( Eg. @userhandle )', 'your_imageid')
-st.write('The id is', twidi)
-get_all_tweets(twidi)
+
+get_all_tweets(twid)
 if(s<0):
     print("The Images posted by the user are depressing")
 else:
