@@ -190,7 +190,7 @@ def get_all_tweets(screen_name):
           print("The Images posted by",screen_name,"are depressing")
         else:
           print("The Images posted by",screen_name,"are not depressing")
-        get_all_tweets("@depressingmsgs")
+get_all_tweets("@depressingmsgs")
 
 
 hide_menu_style = """
