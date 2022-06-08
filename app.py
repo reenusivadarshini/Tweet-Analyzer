@@ -156,4 +156,3 @@ from PIL import Image
 image = Image.open('footer.png')
 
 st.image(image, caption=' ')
-
