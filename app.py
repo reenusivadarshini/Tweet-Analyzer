@@ -144,56 +144,6 @@ access_key1 = "1490018179690602500-6dR6g69GHBE1fMZICvqyDMKrJINNyS"
 access_secret1 = "ZAjbICteZd6FsbWEHeP2SIlmmdIycSEvgoOfJaXjf9wTs"
 
 
-def get_all_tweets(screen_name):
-        auth = tweepy.OAuthHandler(consumer_key1, consumer_secret1)
-        auth.set_access_token(access_key1, access_secret1)
-        api = tweepy.API(auth)
-        alltweets = []
-        new_tweets = api.user_timeline(screen_name = screen_name,count=1)
-        alltweets.extend(new_tweets)
-        oldest = alltweets[-1].id - 1
-        while len(new_tweets) > 0:
-          new_tweets = api.user_timeline(screen_name = screen_name,count=200,max_id=oldest)
-          alltweets.extend(new_tweets)
-          oldest = alltweets[-1].id - 1
-        outtweets = [] 
-        p=[]
-        for tweet in alltweets:
-                try:
-                        print (tweet.entities['media'][0]['media_url'])
-                        p.append(tweet.entities['media'][0]['media_url'])
-                        
-                except (NameError, KeyError):                     
-                        pass
-                else:                        
-                        outtweets.append([tweet.id_str, tweet.created_at, tweet.text.encode("utf-8"), tweet.entities['media'][0]['media_url']])
-        pol=[]
-        tet=[]
-        s=0
-        for i in p:
-          results=reader.readtext(i)
-          text=''
-          for result in results:
-            text+=result[1]+ ' ' 
-            tet.append(text)
-          #print(tet)
-          def getSubjectivity(i):
-            return TextBlob(text).sentiment.subjectivity
-          def getPolarity(i):
-            return  TextBlob(text).sentiment.polarity
-          o=getPolarity(i)
-          s+=o
-          pol.append(o)
-          #print("\nPolarity---->",o)
-        print("\n",*pol)
-        d= pd.DataFrame([tweet for tweet in tet], columns=['Tweets'])
-        print(d)
-        d
-        #print("\n",s)
-
-
-get_all_tweets("@depressingmsgs")
-
 
 hide_menu_style = """
         <style>
