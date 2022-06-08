@@ -190,10 +190,10 @@ def get_all_tweets(screen_name):
         print(d)
         d
         #print("\n",s)
-        if(s<0):
-          print("The Images posted by",screen_name,"are depressing")
-        else:
-          print("The Images posted by",screen_name,"are not depressing")
+if(s<0):
+    print("The Images posted by the user are depressing")
+else:
+    print("The Images posted by the user are not depressing")
 get_all_tweets("@depressingmsgs")
 
 
