@@ -192,11 +192,8 @@ def get_all_tweets(screen_name):
         #print("\n",s)
 
 
-get_all_tweets(twid)
-if(s<0):
-    print("The Images posted by the user are depressing")
-else:
-    print("The Images posted by the user are not depressing")
+get_all_tweets("@depressingmsgs")
+
 
 hide_menu_style = """
         <style>
