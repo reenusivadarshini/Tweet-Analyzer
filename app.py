@@ -13,6 +13,8 @@ import plotly.express as px
 import emoji
 import csv
 import sys
+import easyocr
+
 
 
 from PIL import Image
