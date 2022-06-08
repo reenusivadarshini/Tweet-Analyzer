@@ -11,10 +11,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import emoji
-import csv
-import sys
-#import easyocr
-#reader = easyocr.Reader(['ch_sim','en'])
 
 
 from PIL import Image
@@ -51,7 +47,7 @@ image = Image.open('sidebar1.png')
 st.sidebar.image(image)
 
 
-twid = st.text_input('Enter the id the person( Eg. @userhandle )', 'your_id')
+twid = st.text_input('Enter the id the person( Eg. @Ria11871667 )', 'your_id')
 st.write('The id is', twid)
 
 
@@ -137,12 +133,6 @@ selected_c_var = st.selectbox('Color?', d.columns)
 #fig = px.scatter(d, x="Subjectivity", y="Polarity",color="Analysis")
 fig1 = px.scatter(d, x = d[selected_x_var], y = d[selected_y_var],color=d[selected_c_var])
 st.plotly_chart(fig1)
-
-consumer_key1 = "pTivamyKt0GtxZiFizMMhsouj"
-consumer_secret1 = "HEkXmzyaALIAD1AfTHLdRnegC8rstIY2AUHbrzvRGIjoJl3PCo"
-access_key1 = "1490018179690602500-6dR6g69GHBE1fMZICvqyDMKrJINNyS"
-access_secret1 = "ZAjbICteZd6FsbWEHeP2SIlmmdIycSEvgoOfJaXjf9wTs"
-
 
 
 hide_menu_style = """
