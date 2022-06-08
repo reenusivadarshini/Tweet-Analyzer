@@ -14,7 +14,7 @@ import emoji
 import csv
 import sys
 import easyocr
-
+reader = easyocr.Reader(['ch_sim','en'])
 
 
 from PIL import Image
