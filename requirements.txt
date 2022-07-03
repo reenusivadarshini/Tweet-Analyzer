@@ -41,9 +41,6 @@ nltk==3.4.4
 notebook==6.0.3
 packaging==20.4
 pandas==1.0.4
-pandocfilters==1.4.2
-parso==0.7.0
-pathtools==0.1.2
 pickleshare==0.7.5
 Pillow==7.1.2
 prometheus-client==0.8.0
