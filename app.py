@@ -47,7 +47,7 @@ image = Image.open('sidebar1.png')
 st.sidebar.image(image)
 
 
-twid = st.text_input('Enter the id the person( Eg. @Ria11871667 )', 'your_id')
+twid = st.text_input('Enter the id of the person( Eg. @elonmusk )', 'your_id')
 st.write('The id is', twid)
 
 
